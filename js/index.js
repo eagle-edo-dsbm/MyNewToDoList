@@ -4,6 +4,13 @@ const taskContainer = document.querySelector(".tdl-container");
 const taskList = document.querySelector('.task-list');
 const errorMessage = document.querySelector('.error-message');
 
+
+newTaskInput.addEventListener('keydown', function(event){
+    if(event.key === 'Enter'){
+        submitButton.click();
+    }
+})
+
 submitButton.addEventListener('click', function(){
     const newTask = newTaskInput.value.trim();
     if(newTask !== ""){
@@ -21,6 +28,7 @@ submitButton.addEventListener('click', function(){
         taskList.appendChild(taskElement);
 
         const deleteButton = document.createElement('button');
+        focus
         deleteButton.textContent = 'Удалить';
         deleteButton.classList.add('delete-button');
         taskElement.appendChild(deleteButton);
